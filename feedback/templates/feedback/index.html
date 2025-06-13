@@ -1,0 +1,161 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Иван Николаевич | Разработчик</title>
+
+    <!-- Стили -->
+    <link rel="stylesheet" href="{% static 'feedback/styles.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Иван Николаевич</h1>
+            <p>Web-разработчик</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#skills">Навыки</a></li>
+                <li><a href="#projects">Проекты</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2>Обо мне</h2>
+            <div class="about-content">
+                <img src="{% static 'feedback/icons/your-photo.jpg' %}" alt="Фото разработчика" class="profile-photo">
+                <div class="about-text">
+                    <p>Привет! Я разработчик с фокусом на веб-разработку и создание Telegram-ботов.</p>
+                    <p>Опыт: Python, Django/Flask, базы данных, облачные технологии и др.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2>Мои навыки</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Языки</h3>
+                    <ul>
+                        <li>Python, HTML, CSS, JavaScript</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Фреймворки</h3>
+                    <ul>
+                        <li>Django, Flask, Django REST</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Базы данных</h3>
+                    <ul>
+                        <li>SQLite, PostgreSQL</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>DevOps</h3>
+                    <ul>
+                        <li>Docker, Docker Compose</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Боты</h3>
+                    <ul>
+                        <li>aiogram, Telebot, python-telegram-bot</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Другое</h3>
+                    <ul>
+                        <li>Git, API, мониторинг</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2>Мои проекты</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Сайт-визитка</h3>
+                    <p>HTML, CSS, JavaScript</p>
+                    <a href="#" class="btn">Посмотреть</a>
+                </div>
+                <div class="project-card">
+                    <h3>Telegram-бот</h3>
+                    <p>Функции, API, интеграции</p>
+                    <a href="#" class="btn">Посмотреть</a>
+                </div>
+                <div class="project-card">
+                    <h3>Проект на Django</h3>
+                    <p>REST API + админка</p>
+                    <a href="#" class="btn">Посмотреть</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Свяжитесь со мной</h2>
+            <div class="contact-content">
+                <form id="contact-form" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Сообщение</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Отправить</button>
+                </form>
+
+                <div class="social-links">
+                    <p>Социальные сети:</p>
+                    <ul>
+                        <li>
+                            <a href="https://github.com/IvanMagomedov" target="_blank">
+                                <img src="{% static 'feedback/icons/github.svg' %}" alt="GitHub" class="icon">
+                            </a>
+                            <a href="https://t.me/tytytyoppp" target="_blank">
+                                <img src="{% static 'feedback/icons/telegram.svg' %}" alt="Telegram" class="icon">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 I_Ma. Все права защищены.</p>
+        </div>
+    </footer>
+
+
+    <script src="{% static 'feedback/script.js' %}"></script>
+</body>
+</html>
