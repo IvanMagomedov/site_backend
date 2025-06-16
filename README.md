@@ -19,7 +19,7 @@
 
 - Python, Django
 - HTML5, CSS3, JavaScript
-- SQLite (по умолчанию)
+- PostgreSQL
 - Django Admin
 
 ## Установка
